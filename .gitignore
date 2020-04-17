@@ -1,0 +1,3 @@
+*.pyc
+webFood/db.sqlite3
+webFood/env
