@@ -1,6 +1,7 @@
 
 from django.contrib.auth.models import User
 from django.db import models
+from config import settings
 
 
 # Create your models here.
@@ -61,7 +62,7 @@ class BillDetail(models.Model):
 
 
 class StaffPerformBill(models.Model):
-    user = models.ForeignKey(User, null=True, blank=True, on_delete=models.DO_NOTHING)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, blank=True, on_delete=models.DO_NOTHING)
     bill = models.ForeignKey(Bill, null=True, blank=True, on_delete=models.DO_NOTHING)
     created_at = models.DateTimeField(null=True, blank=True)
     updated_at = models.DateTimeField(null=True, blank=True)
